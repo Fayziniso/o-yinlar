@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natijalarim — BrainPlay</title>
+    <meta name="description" content="BrainPlay shaxsiy o‘yin statistikasi, kunlik grafiklar va rekordlar." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+      <aside id="appSidebar" class="sidebar"></aside>
+
+      <div class="app-main">
+        <header id="appTopbar" class="topbar"></header>
+
+        <main class="page-content">
+          <section class="section-block">
+            <div>
+              <h1 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px;">Natijalarim va statistika</h1>
+              <p style="color: var(--text-secondary);">Barcha ko‘rsatkichlar siz o‘ynagan haqiqiy o‘yinlar natijalari asosida hisoblanadi.</p>
+            </div>
+
+            <div class="kpi-row">
+              <div class="kpi-card">
+                <span class="kpi-label">Jami o‘ynalgan</span>
+                <strong id="statTotalPlayed" class="kpi-value tabular-nums">0</strong>
+                <span class="kpi-sub">Yakunlangan sessiyalar</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Yakunlangan o‘yinlar</span>
+                <strong id="statCompleted" class="kpi-value tabular-nums">0 ta</strong>
+                <span class="kpi-sub">Noyob o‘yinlar soni</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Umumiy XP</span>
+                <strong id="statTotalXp" class="kpi-value tabular-nums">0 XP</strong>
+                <span id="statLevel" class="kpi-sub">1-daraja</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Eng yuqori ball</span>
+                <strong id="statHighestScore" class="kpi-value tabular-nums">0</strong>
+                <span class="kpi-sub">O‘rtacha ball: <span id="statAvgScore" class="mono">0</span></span>
+              </div>
+            </div>
+
+            <div class="kpi-row" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+              <div class="kpi-card">
+                <span class="kpi-label">Sevimli yo‘nalish</span>
+                <strong id="statFavCategory" class="kpi-value" style="font-size:1.35rem;">Hali aniqlanmagan</strong>
+                <span class="kpi-sub">Eng ko‘p o‘ynalgan kategoriya</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Kunlik faollik seriyasi</span>
+                <strong id="statStreak" class="kpi-value" style="font-size:1.35rem;">0 kun</strong>
+                <span class="kpi-sub">Muntazam shug‘ullanish ko‘rsatkichi</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="stats-grid-2">
+            <div class="panel-card">
+              <h2>Oxirgi 7 kunlik faollik (XP)</h2>
+              <div id="dailyChartContainer" class="chart-container"></div>
+            </div>
+
+            <div class="panel-card">
+              <h2>Yo‘nalishlar bo‘yicha ulush</h2>
+              <div id="categoryBreakdown" class="category-bars"></div>
+            </div>
+          </section>
+
+          <section class="panel-card">
+            <h2>Shaxsiy rekordlar</h2>
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>O‘yin nomi</th>
+                    <th>Yo‘nalish</th>
+                    <th>O‘ynalgan</th>
+                    <th>Eng yuqori ball</th>
+                  </tr>
+                </thead>
+                <tbody id="recordsTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel-card">
+            <h2>So‘nggi faoliyat tarixi</h2>
+            <div class="data-table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>O‘yin</th>
+                    <th>Ball</th>
+                    <th>XP</th>
+                    <th>Aniqlik</th>
+                    <th>Sana</th>
+                  </tr>
+                </thead>
+                <tbody id="recentActivityBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./js/statistics.js"></script>
+  </body>
+</html>

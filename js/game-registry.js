@@ -1,0 +1,73 @@
+/**
+ * BrainPlay — Registry Mapping All 60 Game IDs to Modular ES6 Game Files
+ */
+
+export const GAME_LOADERS = {
+  // Age 3–5 (15 games)
+  'ranglarni-top': () => import('../games/age-3-5/ranglarni-top.js'),
+  'shakllar-olami': () => import('../games/age-3-5/shakllar-olami.js'),
+  'hayvonlar-ovozi': () => import('../games/age-3-5/hayvonlar-ovozi.js'),
+  'katta-yoki-kichik': () => import('../games/age-3-5/katta-yoki-kichik.js'),
+  'juftini-top': () => import('../games/age-3-5/juftini-top.js'),
+  'rasmni-yig': () => import('../games/age-3-5/rasmni-yig.js'),
+  'qaysi-biri-boshqacha': () => import('../games/age-3-5/qaysi-biri-boshqacha.js'),
+  'sonlarni-organamiz': () => import('../games/age-3-5/sonlarni-organamiz.js'),
+  'mevalarni-ajrat': () => import('../games/age-3-5/mevalarni-ajrat.js'),
+  'soyasini-top': () => import('../games/age-3-5/soyasini-top.js'),
+  'xotira-kartalari': () => import('../games/age-3-5/xotira-kartalari.js'),
+  'rangli-ketma-ketlik': () => import('../games/age-3-5/rangli-ketma-ketlik.js'),
+  'hayvonlarni-sanaymiz': () => import('../games/age-3-5/hayvonlarni-sanaymiz.js'),
+  'yolni-top': () => import('../games/age-3-5/yolni-top.js'),
+  'rasmni-eslab-qol': () => import('../games/age-3-5/rasmni-eslab-qol.js'),
+
+  // Age 6–9 (15 games)
+  'matematik-poyga': () => import('../games/age-6-9/matematik-poyga.js'),
+  'xotira-chempioni': () => import('../games/age-6-9/xotira-chempioni.js'),
+  'mantiqiy-ketma-ketlik': () => import('../games/age-6-9/mantiqiy-ketma-ketlik.js'),
+  'sozni-top': () => import('../games/age-6-9/sozni-top.js'),
+  'rasmli-sudoku': () => import('../games/age-6-9/rasmli-sudoku.js'),
+  'labirint-sarguzashti': () => import('../games/age-6-9/labirint-sarguzashti.js'),
+  'farqni-top': () => import('../games/age-6-9/farqni-top.js'),
+  'tez-hisobla': () => import('../games/age-6-9/tez-hisobla.js'),
+  'ortiqchasini-top': () => import('../games/age-6-9/ortiqchasini-top.js'),
+  'kodni-och': () => import('../games/age-6-9/kodni-och.js'),
+  'shakllar-konstruktor': () => import('../games/age-6-9/shakllar-konstruktor.js'),
+  'diqqat-sinovi': () => import('../games/age-6-9/diqqat-sinovi.js'),
+  'matematik-domino': () => import('../games/age-6-9/matematik-domino.js'),
+  'soz-tuzuvchi': () => import('../games/age-6-9/soz-tuzuvchi.js'),
+  'mantiqiy-jumboqlar': () => import('../games/age-6-9/mantiqiy-jumboqlar.js'),
+
+  // Age 10–15 (15 games)
+  'sudoku-master': () => import('../games/age-10-15/sudoku-master.js'),
+  'binary-challenge': () => import('../games/age-10-15/binary-challenge.js'),
+  'equation-solver': () => import('../games/age-10-15/equation-solver.js'),
+  'pattern-master': () => import('../games/age-10-15/pattern-master.js'),
+  'chess-puzzle': () => import('../games/age-10-15/chess-puzzle.js'),
+  'memory-matrix': () => import('../games/age-10-15/memory-matrix.js'),
+  'code-breaker': () => import('../games/age-10-15/code-breaker.js'),
+  'logical-grid': () => import('../games/age-10-15/logical-grid.js'),
+  'geometry-challenge': () => import('../games/age-10-15/geometry-challenge.js'),
+  'word-master': () => import('../games/age-10-15/word-master.js'),
+  'reaction-test': () => import('../games/age-10-15/reaction-test.js'),
+  'tower-of-hanoi': () => import('../games/age-10-15/tower-of-hanoi.js'),
+  'algorithm-runner': () => import('../games/age-10-15/algorithm-runner.js'),
+  'number-detective': () => import('../games/age-10-15/number-detective.js'),
+  'escape-the-room': () => import('../games/age-10-15/escape-the-room.js'),
+
+  // Age 16–20 (15 games)
+  'advanced-sudoku': () => import('../games/age-16-20/advanced-sudoku.js'),
+  'algorithm-challenge': () => import('../games/age-16-20/algorithm-challenge.js'),
+  'mathematical-iq': () => import('../games/age-16-20/mathematical-iq.js'),
+  'strategic-chess': () => import('../games/age-16-20/strategic-chess.js'),
+  'cryptography-master': () => import('../games/age-16-20/cryptography-master.js'),
+  'logic-detective': () => import('../games/age-16-20/logic-detective.js'),
+  'quantum-memory': () => import('../games/age-16-20/quantum-memory.js'),
+  'probability-master': () => import('../games/age-16-20/probability-master.js'),
+  'speed-calculation': () => import('../games/age-16-20/speed-calculation.js'),
+  'tower-strategy': () => import('../games/age-16-20/tower-strategy.js'),
+  'programming-logic': () => import('../games/age-16-20/programming-logic.js'),
+  'sequence-architect': () => import('../games/age-16-20/sequence-architect.js'),
+  'spatial-intelligence': () => import('../games/age-16-20/spatial-intelligence.js'),
+  'decision-master': () => import('../games/age-16-20/decision-master.js'),
+  'brain-battle': () => import('../games/age-16-20/brain-battle.js'),
+};

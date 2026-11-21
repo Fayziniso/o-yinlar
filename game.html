@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O‘yin maydoni — BrainPlay</title>
+    <meta name="description" content="BrainPlay interaktiv o‘yin maydoni." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/game-engine.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body class="game-page">
+    <header class="game-hud-bar">
+      <div class="hud-left">
+        <a href="./games.html" class="btn btn-secondary btn-sm">Orqaga</a>
+        <div class="hud-title-group">
+          <h1 id="hudGameTitle">Yuklanmoqda...</h1>
+          <p id="hudGameSub"></p>
+        </div>
+      </div>
+
+      <div class="hud-metrics" aria-live="polite">
+        <div class="hud-metric">
+          <span class="hud-metric-label">Ball</span>
+          <strong id="hudScore" class="hud-metric-value">0</strong>
+        </div>
+        <div class="hud-metric">
+          <span class="hud-metric-label">To‘g‘ri</span>
+          <strong id="hudCorrect" class="hud-metric-value" style="color:var(--success);">0</strong>
+        </div>
+        <div class="hud-metric">
+          <span class="hud-metric-label">Xato</span>
+          <strong id="hudWrong" class="hud-metric-value" style="color:var(--danger);">0</strong>
+        </div>
+        <div class="hud-metric">
+          <span class="hud-metric-label">Vaqt</span>
+          <strong id="hudTimer" class="hud-metric-value">00:00</strong>
+        </div>
+        <div class="hud-metric">
+          <span class="hud-metric-label">Rekord</span>
+          <strong id="hudBest" class="hud-metric-value">0</strong>
+        </div>
+      </div>
+
+      <div class="hud-controls">
+        <button type="button" id="hudSoundBtn" class="icon-btn" aria-label="Ovozni boshqarish"></button>
+        <button type="button" id="hudPauseBtn" class="btn btn-secondary btn-sm" disabled>Pauza</button>
+        <button type="button" id="hudRestartBtn" class="btn btn-ghost btn-sm" disabled>Qayta</button>
+      </div>
+    </header>
+
+    <main class="game-arena-wrapper">
+      <section class="game-stage-card">
+        <div id="gameStage"></div>
+
+        <div id="pauseOverlay" class="pause-overlay" hidden>
+          <div class="pause-box">
+            <h2>O‘yin to‘xtatildi</h2>
+            <p style="color: var(--text-secondary);">Istalgan vaqtda davom ettirishingiz yoki o‘yinni qaytadan boshlashingiz mumkin.</p>
+            <button type="button" id="resumeGameBtn" class="btn btn-primary">Davom ettirish</button>
+            <button type="button" id="pauseRestartBtn" class="btn btn-secondary">Qayta boshlash</button>
+            <a href="./games.html" class="btn btn-ghost">O‘yinlardan chiqish</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/game-runner.js"></script>
+  </body>
+</html>

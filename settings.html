@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sozlamalar — BrainPlay</title>
+    <meta name="description" content="BrainPlay profil, yosh guruhi, tema va ovoz sozlamalari." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+      <aside id="appSidebar" class="sidebar"></aside>
+
+      <div class="app-main">
+        <header id="appTopbar" class="topbar"></header>
+
+        <main class="page-content">
+          <section class="section-block">
+            <div>
+              <h1 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px;">Sozlamalar</h1>
+              <p style="color: var(--text-secondary);">Profil ma’lumotlari, yosh guruhi, ko‘rinish va ovoz sozlamalarini boshqaring.</p>
+            </div>
+
+            <div class="settings-grid">
+              <div class="panel-card">
+                <h2>Profil ma’lumotlari</h2>
+                <form id="settingsProfileForm" style="display:flex; flex-direction:column; gap:16px;">
+                  <div class="form-group" style="margin:0;">
+                    <label for="settingsNameInput" class="form-label">Foydalanuvchi ismi</label>
+                    <input type="text" id="settingsNameInput" class="form-input" maxlength="32" required />
+                  </div>
+                  <div>
+                    <button type="submit" class="btn btn-primary">Ismni saqlash</button>
+                  </div>
+                </form>
+
+                <div style="padding-top:16px; border-top:1px solid var(--border-hairline);">
+                  <div class="form-group" style="margin:0;">
+                    <label for="settingsAgeSelect" class="form-label">Yosh guruhi</label>
+                    <select id="settingsAgeSelect" class="form-input"></select>
+                    <span style="font-size:0.82rem; color:var(--text-muted);">Yosh guruhini o‘zgartirish dizayn va o‘yinlar to‘plamini darhol yangilaydi.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel-card">
+                <h2>Ko‘rinish va ovoz</h2>
+
+                <div class="setting-row">
+                  <div class="setting-row-text">
+                    <strong>Tungi rejim (Dark Mode)</strong>
+                    <span>Ko‘zga qulay qorong‘i interfeys ranglarini yoqish</span>
+                  </div>
+                  <button type="button" id="themeToggleSwitch" class="toggle-switch" role="switch" aria-checked="false" aria-label="Tungi rejim"></button>
+                </div>
+
+                <div class="setting-row">
+                  <div class="setting-row-text">
+                    <strong>Ovoz effektlari</strong>
+                    <span>To‘g‘ri/xato javoblar va g‘alaba tovushlari (Web Audio)</span>
+                  </div>
+                  <button type="button" id="soundToggleSwitch" class="toggle-switch" role="switch" aria-checked="true" aria-label="Ovoz effektlari"></button>
+                </div>
+
+                <div style="padding-top:18px; border-top:1px solid var(--border-hairline); display:flex; flex-direction:column; gap:12px;">
+                  <h3>Ma’lumotlarni boshqarish</h3>
+                  <p style="font-size:0.86rem; color:var(--text-secondary);">Barcha natijalar brauzerning mahalliy xotirasida (LocalStorage) saqlanadi.</p>
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button type="button" id="resetProgressBtn" class="btn btn-secondary">Natijalarni tozalash</button>
+                    <button type="button" id="resetAllBtn" class="btn btn-danger">Hisobni o‘chirish</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="confirmModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+      <div class="modal-dialog">
+        <h3 id="confirmModalTitle">Tasdiqlash</h3>
+        <p id="confirmModalDesc"></p>
+        <div class="modal-actions">
+          <button type="button" id="confirmModalCancel" class="btn btn-secondary">Bekor qilish</button>
+          <button type="button" id="confirmModalOk" class="btn btn-danger">Tasdiqlash</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/settings.js"></script>
+  </body>
+</html>

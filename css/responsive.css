@@ -1,0 +1,167 @@
+/* ==========================================================================
+   BrainPlay — Responsive Breakpoints (Desktop, Tablet & Smartphone)
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .age-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sidebar-close-btn {
+    display: inline-flex;
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .menu-toggle-btn {
+    display: inline-flex;
+  }
+
+  .kpi-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-visual {
+    min-height: 220px;
+  }
+
+  .user-progress-inline {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --topbar-height: 60px;
+  }
+
+  .onboarding-topbar,
+  .onboarding-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .age-grid,
+  .games-grid,
+  .achievements-grid,
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .search-wrap {
+    max-width: none;
+  }
+
+  .user-meta-text {
+    display: none;
+  }
+
+  .page-content {
+    padding: 18px 16px 48px;
+    gap: 26px;
+  }
+
+  .welcome-panel {
+    padding: 20px;
+  }
+
+  .registration-form-panel {
+    padding: 26px 20px;
+  }
+
+  .game-hud-bar {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hud-metrics {
+    gap: 14px;
+  }
+
+  .game-arena-wrapper {
+    padding: 16px 12px 36px;
+  }
+
+  .game-stage-card {
+    padding: 20px 14px;
+    min-height: 460px;
+  }
+
+  .engine-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .choice-grid,
+  .choice-grid.cols-3,
+  .choice-grid.cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .board-cell {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sudoku-cell {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .meter-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toast-region {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+}

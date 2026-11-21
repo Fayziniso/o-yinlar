@@ -1,0 +1,6 @@
+{
+  "name": "BrainPlay — Aqlni charxla!",
+  "description": "3 yoshdan 20 yoshgacha bo'lgan foydalanuvchilar uchun 60 ta intellektual, mantiqiy, matematik va xotira o'yinlarini o'z ichiga olgan zamonaviy ta'limiy o'yin platformasi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

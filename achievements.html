@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yutuqlarim — BrainPlay</title>
+    <meta name="description" content="BrainPlay o‘yinlarida qo‘lga kiritilgan yutuqlar va mukofotlar." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+      <aside id="appSidebar" class="sidebar"></aside>
+
+      <div class="app-main">
+        <header id="appTopbar" class="topbar"></header>
+
+        <main class="page-content">
+          <section class="section-block">
+            <div>
+              <h1 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px;">Yutuqlarim</h1>
+              <p id="achievementsSummary" style="color: var(--text-secondary);"></p>
+            </div>
+
+            <div id="achievementFilterTabs" class="category-tabs">
+              <button type="button" class="cat-tab active" data-filter="all">Barchasi</button>
+              <button type="button" class="cat-tab" data-filter="unlocked">Ochilgan</button>
+              <button type="button" class="cat-tab" data-filter="locked">Jarayonda</button>
+            </div>
+
+            <div id="achievementsGrid" class="achievements-grid"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./js/achievements.js"></script>
+  </body>
+</html>

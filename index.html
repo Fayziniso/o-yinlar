@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainPlay — Aqlni charxla!</title>
+    <meta name="description" content="3 yoshdan 20 yoshgacha bo‘lgan foydalanuvchilar uchun 60 ta intellektual, mantiqiy, matematik va xotira o‘yinlari platformasi." />
+    <meta property="og:title" content="BrainPlay — Aqlni charxla!" />
+    <meta property="og:description" content="Yoshingizni tanlang va aqlni charxlaydigan 60 ta ta’limiy o‘yinlarni boshlang!" />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/onboarding.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body class="onboarding-page">
+    <header class="onboarding-topbar">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v2a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"/><path d="M9 15v5"/><path d="M15 15v5"/></svg>
+        </span>
+        <span>BrainPlay</span>
+      </a>
+      <div class="onboarding-topbar-actions">
+        <button type="button" id="onboardingThemeBtn" class="btn btn-secondary btn-sm">Tungi rejim</button>
+      </div>
+    </header>
+
+    <main class="onboarding-main">
+      <section class="onboarding-hero">
+        <h1>BrainPlay olamiga xush kelibsiz!</h1>
+        <p>Yoshingizni tanlang va aqlni charxlaydigan o‘yinlarni boshlang!</p>
+      </section>
+
+      <section class="age-grid" id="ageCardsGrid" aria-label="Yosh guruhini tanlash"></section>
+    </main>
+
+    <footer class="onboarding-footer">
+      BrainPlay — Aqlni charxla! · 4 ta yosh guruhi · 60 ta intellektual o‘yin
+    </footer>
+
+    <script type="module">
+      import { initAgeSelectionPage } from './js/app.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        initAgeSelectionPage({ redirectIfOnboarded: true });
+      });
+    </script>
+  </body>
+</html>

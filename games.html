@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O‘yinlar katalogi — BrainPlay</title>
+    <meta name="description" content="BrainPlay intellektual, xotira, mantiq, matematika va strategiya o‘yinlari katalogi." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="./css/games.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div id="sidebarOverlay" class="sidebar-overlay"></div>
+      <aside id="appSidebar" class="sidebar"></aside>
+
+      <div class="app-main">
+        <header id="appTopbar" class="topbar"></header>
+
+        <main class="page-content">
+          <section class="section-block">
+            <div>
+              <h1 id="gamesPageTitle" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); margin-bottom: 6px;">O‘yinlar katalogi</h1>
+              <p id="gamesPageSubtitle" style="color: var(--text-secondary);"></p>
+            </div>
+
+            <div class="games-toolbar">
+              <div id="gamesCategoryTabs" class="category-tabs"></div>
+
+              <div class="games-filters">
+                <input type="search" id="catalogSearchInput" class="filter-select" placeholder="Nom bo‘yicha filtrlash..." style="min-width: 200px;" />
+                <button type="button" id="favFilterBtn" class="cat-tab" aria-pressed="false">Sevimlilar</button>
+                <select id="gamesSortSelect" class="filter-select" aria-label="Saralash">
+                  <option value="default">Standart tartib</option>
+                  <option value="popular">Ommabop</option>
+                  <option value="best">Eng yuqori rekord</option>
+                  <option value="alpha">Alifbo tartibida</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="gamesCountLabel" style="font-size: 0.86rem; color: var(--text-muted);"></div>
+            <div id="catalogGamesGrid" class="games-grid"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="./js/games-page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ro‘yxatdan o‘tish — BrainPlay</title>
+    <meta name="description" content="BrainPlay profilini yarating va intellektual o‘yinlarni boshlang." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/onboarding.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body class="onboarding-page">
+    <header class="onboarding-topbar">
+      <a href="./age-selection.html" class="brand-link">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v2a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"/><path d="M9 15v5"/><path d="M15 15v5"/></svg>
+        </span>
+        <span>BrainPlay</span>
+      </a>
+      <div class="onboarding-topbar-actions">
+        <button type="button" id="onboardingThemeBtn" class="btn btn-secondary btn-sm">Tungi rejim</button>
+      </div>
+    </header>
+
+    <main class="onboarding-main">
+      <div class="registration-shell">
+        <div class="registration-visual">
+          <img id="regVisualImg" src="" alt="" referrerpolicy="no-referrer" />
+          <div class="registration-visual-scrim"></div>
+          <div class="registration-visual-content">
+            <span id="regVisualRange"></span>
+            <h2 id="regVisualTitle"></h2>
+            <p id="regVisualDesc"></p>
+          </div>
+        </div>
+
+        <div class="registration-form-panel">
+          <div class="registration-step-note">2-qadam · Profilni sozlash</div>
+          <h1>Ismingiz nima?</h1>
+          <p class="registration-subtitle">Natijalaringiz, XP ballaringiz va yutuqlaringiz shu profilga saqlanadi.</p>
+
+          <form id="registrationForm" novalidate>
+            <div class="form-group">
+              <label for="playerNameInput" class="form-label">Ismingiz</label>
+              <input
+                type="text"
+                id="playerNameInput"
+                class="form-input"
+                placeholder="Ismingizni kiriting..."
+                maxlength="32"
+                autocomplete="given-name"
+                required
+              />
+              <div id="nameError" class="form-error" role="alert"></div>
+            </div>
+
+            <div class="form-group">
+              <span class="form-label">Profil rangini tanlang</span>
+              <div id="avatarPicker" class="avatar-picker"></div>
+            </div>
+
+            <div id="greetingPreview" class="greeting-preview"></div>
+
+            <div class="registration-actions">
+              <a href="./age-selection.html" class="btn btn-secondary btn-lg">Orqaga</a>
+              <button type="submit" class="btn btn-primary btn-lg">Boshlash</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import { initRegistrationPage } from './js/app.js';
+      document.addEventListener('DOMContentLoaded', initRegistrationPage);
+    </script>
+  </body>
+</html>

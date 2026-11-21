@@ -1,0 +1,720 @@
+/* ==========================================================================
+   BrainPlay — Universal Game Engine Arena & Interactive Game UI
+   ========================================================================== */
+
+.game-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-canvas);
+}
+
+.game-hud-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.hud-title-group {
+  min-width: 0;
+}
+
+.hud-title-group h1 {
+  font-size: 1.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hud-title-group p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hud-metrics {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-shrink: 0;
+}
+
+.hud-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.hud-metric-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.hud-metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.hud-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Main Arena Stage */
+.game-arena-wrapper {
+  flex: 1;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 24px 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-stage-card {
+  position: relative;
+  flex: 1;
+  min-height: 540px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Start, Pause & Completion Screens */
+.engine-screen {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  animation: slideUp 0.22s var(--ease-out);
+}
+
+.engine-screen-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.engine-screen-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.engine-screen h2 {
+  font-size: 1.9rem;
+}
+
+.engine-screen p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.engine-instruction-box {
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.engine-instruction-box strong {
+  color: var(--text-primary);
+}
+
+.engine-stats-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.engine-stat-cell {
+  padding: 14px 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.engine-stat-cell span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.engine-stat-cell strong {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.engine-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* Pause Overlay */
+.pause-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(5px);
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.pause-overlay[hidden] {
+  display: none;
+}
+
+.pause-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Live Gameplay Container & Feedback Banner */
+.game-play-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.game-round-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.game-prompt {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.game-subprompt {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 60ch;
+}
+
+.game-feedback {
+  min-height: 36px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.16s var(--ease-out);
+}
+
+.game-feedback.idle {
+  opacity: 0;
+}
+
+.game-feedback.correct {
+  background: var(--success-soft);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+.game-feedback.wrong {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+/* Reusable Interactive Game Components */
+.choice-grid {
+  width: 100%;
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.choice-grid.cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-grid.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.choice-btn {
+  min-height: 64px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-hairline);
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  transition: transform 0.14s var(--ease-out), border-color 0.14s var(--ease-out), background-color 0.14s var(--ease-out);
+}
+
+.choice-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.choice-btn.is-correct {
+  border-color: var(--success);
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.choice-btn.is-wrong {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.choice-btn.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Visual Display Box (For equations, shapes, patterns, ciphers) */
+.stimulus-box {
+  width: 100%;
+  max-width: 680px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.stimulus-big {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+}
+
+/* Memory Cards Grid */
+.memory-grid {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.memory-card {
+  aspect-ratio: 1 / 1;
+  min-height: 68px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-strong);
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 1.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s var(--ease-out), background-color 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.memory-card.flipped,
+.memory-card.matched {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.memory-card.matched {
+  border-color: var(--success);
+  background: var(--success-soft);
+}
+
+/* Matrix / Grid Board (Memory Matrix, Maze, Pathfinding, Sudoku, Chess) */
+.board-grid {
+  display: grid;
+  gap: 4px;
+  background: var(--border-strong);
+  padding: 6px;
+  border-radius: var(--radius-md);
+}
+
+.board-cell {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s var(--ease-out), background-color 0.14s var(--ease-out);
+}
+
+.board-cell.lit {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.board-cell.fixed {
+  background: var(--bg-subtle);
+  font-weight: 800;
+}
+
+.board-cell.wall {
+  background: var(--text-primary);
+}
+
+.board-cell.goal {
+  background: var(--success-soft);
+  border: 2px solid var(--success);
+}
+
+.board-cell.player {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Chess Board */
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: min(448px, 100%);
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.chess-sq {
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.45rem, 3.4vw, 2.2rem);
+  line-height: 1;
+  position: relative;
+}
+
+.chess-sq.light {
+  background: #f0d9b5;
+  color: #1e293b;
+}
+
+.chess-sq.dark {
+  background: #b58863;
+  color: #0f172a;
+}
+
+.chess-sq.selected {
+  box-shadow: inset 0 0 0 4px #2563eb;
+}
+
+.chess-sq.hint {
+  box-shadow: inset 0 0 0 4px #10b981;
+}
+
+/* Sudoku Grid */
+.sudoku-grid {
+  display: grid;
+  gap: 2px;
+  background: var(--text-primary);
+  border: 3px solid var(--text-primary);
+  border-radius: 6px;
+}
+
+.sudoku-cell {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sudoku-cell.given {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.sudoku-cell.active {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.sudoku-cell.err {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.numpad-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.numpad-btn {
+  min-width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.numpad-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* Tower of Hanoi */
+.hanoi-stage {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;
+  padding: 24px 16px 12px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.hanoi-peg {
+  position: relative;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 6px 8px;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  background: transparent;
+}
+
+.hanoi-peg::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 175px;
+  background: var(--border-strong);
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.hanoi-peg.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.hanoi-disk {
+  position: relative;
+  z-index: 2;
+  height: 28px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Text / Numeric Input Row inside Games */
+.game-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.game-input-row .form-input {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Reaction Test Pad */
+.reaction-pad {
+  width: 100%;
+  max-width: 560px;
+  min-height: 240px;
+  border-radius: var(--radius-xl);
+  border: none;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.1s ease;
+}
+
+/* Arrow Controls for Mazes / Algorithms */
+.dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(2, 52px);
+  gap: 8px;
+}
+
+.dpad-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dpad-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+/* Code / Logic Snippet Block */
+.code-block {
+  width: 100%;
+  max-width: 620px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* Resource Bars for Strategy/Decision Games */
+.meter-row {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.meter-box {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+  text-align: center;
+}
+
+.meter-box span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.meter-box strong {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+}
